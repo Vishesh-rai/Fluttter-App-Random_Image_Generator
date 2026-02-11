@@ -1,0 +1,42 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        backgroundColor: Colors.black12,
+        body: Center(
+          child: GestureDetector(
+            onTap: () {
+              print("Netflix tapped");
+            },
+            onDoubleTap: () {
+              print("Bhll sare");
+            },
+            
+            child: Container(
+              height: 100,
+              color: const Color.fromARGB(255, 238, 8, 8),
+              alignment: Alignment.center,
+              child: Text(
+                "NETFLIX",
+                style: TextStyle(
+                  color: const Color.fromARGB(255, 0, 0, 0),
+                  fontSize: 80, // 80 bahut zyada tha
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}

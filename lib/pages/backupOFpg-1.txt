@@ -1,0 +1,56 @@
+import 'package:flutter/material.dart';
+import 'package:my_first_real_app/pages/second_page.dart';
+// import 'package:my_first_real_app/pages/second_page.dart';
+
+class FirstPage extends StatelessWidget {
+  const FirstPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 74, 143, 222),
+    
+      appBar: AppBar(
+        title: Text("Kishan`s", style: TextStyle(color: Colors.white)),
+        backgroundColor: const Color.fromARGB(255, 83, 83, 254),
+      ),
+      drawer: Drawer(
+        backgroundColor: const Color.fromARGB(94, 1, 255, 60),
+        child: Column(
+          children: [
+            DrawerHeader(child: Icon(Icons.favorite, size: 67)),
+            ListTile(
+              leading: Icon(Icons.home_max_sharp, size: 50),
+              title: Text("First Page"),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.pushNamed(context, '/first_page');
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.local_movies_sharp, size: 50),
+              title: Text("Second PAge"),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.pushNamed(context, '/second_page');
+              },
+            ),
+          ],
+        ),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          // ignore: avoid_print
+          child: Row(children: [Text("hi"), Icon(Icons.energy_savings_leaf)]),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => SecondPage()),
+            );
+          },
+        ),
+      ),
+    );
+  }
+}
+    

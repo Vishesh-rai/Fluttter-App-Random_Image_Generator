@@ -1,0 +1,75 @@
+Starting Lecture :~
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        backgroundColor: const Color.fromARGB(255, 2, 42, 2),
+        appBar: AppBar(
+          title: Text("My", style: TextStyle(color: Colors.white)),
+          backgroundColor: const Color.fromARGB(255, 8, 17, 76),
+
+          leading: Icon(Icons.menu_book, color: Colors.white),
+
+          actions: [
+            IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.logout, color: Colors.white),
+            ),
+          ],
+        ),
+
+        body: Center(
+          child: Container(
+            padding: EdgeInsets.all(15),
+            decoration: BoxDecoration(
+              color: Colors.cyan,
+              borderRadius: BorderRadius.circular(25),
+            ),
+            height: 80,
+            width: 80,
+            child: Icon(
+              Icons.dangerous_outlined,
+              color: Color.fromARGB(255, 255, 0, 0),
+              size: 40,
+            ),
+            // child: Text(
+            //   "Heading",
+            //   style: TextStyle(fontSize: 10, color: Colors.black),+
+            // ),
+            // child: Text(
+            //   "Hiii jhjggh hghg hjg ",
+            //   style: TextStyle(fontSize: 25,
+            //     color: Colors.amberAccent,
+            //     backgroundColor: Colors.black,
+            //   ),
+            // ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
+
+
+Brefore routes or without using routes:
+  child: ElevatedButton(onPressed: (){
+  
+          Navigator.push(context, MaterialPageRoute(builder: (context)=>SecondPage()));
+        },child: Text("data"),)
+
+with use of routes:
+  child: ElevatedButton(onPressed:(){
+      Navigator.pushNamed(context,'/second_page');
+      
+  })
