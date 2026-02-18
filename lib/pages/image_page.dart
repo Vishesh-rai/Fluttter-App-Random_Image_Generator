@@ -5,7 +5,7 @@ void main() {
 }
 
 class ImagePage extends StatelessWidget {
-  const ImagePage({super.key});
+  const ImagePage({super.key});  
 
   @override
   Widget build(BuildContext context) {
